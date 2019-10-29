@@ -4,7 +4,9 @@ CFLAGS 		= -Wall -Werror -Wextra -c
 SRC	:= src/io/ft_putchar_fd.c \
 	src/io/ft_putendl_fd.c \
 	src/io/ft_putnbr_fd.c \
-	src/io/ft_putstr_fd.c
+	src/io/ft_putstr_fd.c \
+	src/io/ft_putchar.c \
+	src/io/ft_putstr.c
 # STD
 SRC	:= $(SRC) src/std/ft_atoi.c \
 	src/std/ft_calloc.c \

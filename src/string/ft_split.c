@@ -6,7 +6,7 @@
 /*   By: aouahib <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 19:45:27 by aouahib           #+#    #+#             */
-/*   Updated: 2019/10/27 19:41:31 by aouahib          ###   ########.fr       */
+/*   Updated: 2019/10/29 14:01:29 by aouahib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ static char	**fill(char **split, const char *s, char c, int count)
 	return (split);
 }
 
-char		**ft_split(char const *s, char c)
+char		**ft_split(const char *s, char c)
 {
 	char	**split;
 	int		i;

@@ -6,13 +6,13 @@
 /*   By: aouahib <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 17:39:39 by aouahib           #+#    #+#             */
-/*   Updated: 2019/10/27 19:10:10 by aouahib          ###   ########.fr       */
+/*   Updated: 2019/10/29 14:02:14 by aouahib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(const char *s1, char const *s2)
 {
 	char	*join;
 	size_t	size;

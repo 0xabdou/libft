@@ -45,6 +45,10 @@ SRC	:= $(SRC) src/types/ft_isalnum.c \
 	src/types/ft_isupper.c \
 	src/types/ft_tolower.c \
 	src/types/ft_toupper.c
+# GET_NEXT_LINE
+SRC := $(SRC) src/gnl/get_next_line.c \
+	src/gnl/get_next_line_utils.c
+
 OBJ = $(notdir $(SRC:.c=.o))
 INC = inc
 NAME = libft.a
@@ -52,19 +56,21 @@ NAME = libft.a
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	ar -rcs $(NAME) $(OBJ)
-
+	
 %.o: src/io/%.c
-	$(CC) $(CFLAGS) -I $(INC) $< -o $@ 
+	$(CC) $(CFLAGS) -I $(INC) $< -o $@ && ar -rcs $(NAME) $(@)
 
 %.o: src/std/%.c
-	$(CC) $(CFLAGS) -I $(INC) $< -o $@ 
+	$(CC) $(CFLAGS) -I $(INC) $< -o $@ && ar -rcs $(NAME) $(@)
 
 %.o: src/string/%.c
-	$(CC) $(CFLAGS) -I $(INC) $< -o $@ 
+	$(CC) $(CFLAGS) -I $(INC) $< -o $@ && ar -rcs $(NAME) $(@)
 
 %.o: src/types/%.c
-	$(CC) $(CFLAGS) -I $(INC) $< -o $@ 
+	$(CC) $(CFLAGS) -I $(INC) $< -o $@ && ar -rcs $(NAME) $(@)
+
+%.o: src/gnl/%.c
+	$(CC) $(CFLAGS) -I $(INC) $< -o $@ && ar -rcs $(NAME) $(@)
 
 clean:
 	rm -f $(OBJ)

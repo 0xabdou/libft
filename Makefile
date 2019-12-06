@@ -49,14 +49,20 @@ SRC	:= $(SRC) src/types/ft_isalnum.c \
 SRC := $(SRC) src/gnl/get_next_line.c \
 	src/gnl/get_next_line_utils.c
 
+PRINTF_DIR = src/io/ft_printf
+PRINTF = printf.a
 OBJ = $(notdir $(SRC:.c=.o))
 INC = inc
 NAME = libft.a
 
 all: $(NAME)
 
-$(NAME): $(OBJ)
-	
+$(NAME): $(PRINTF) $(OBJ)
+
+$(PRINTF):
+	make -C $(PRINTF_DIR)
+	cp $(PRINTF_DIR)/$(PRINTF) $(NAME)
+
 %.o: src/io/%.c
 	$(CC) $(CFLAGS) -I $(INC) $< -o $@ && ar -rcs $(NAME) $(@)
 
@@ -69,13 +75,15 @@ $(NAME): $(OBJ)
 %.o: src/types/%.c
 	$(CC) $(CFLAGS) -I $(INC) $< -o $@ && ar -rcs $(NAME) $(@)
 
-%.o: src/gnl/%.c
+%.o: src/io/gnl/%.c
 	$(CC) $(CFLAGS) -I $(INC) $< -o $@ && ar -rcs $(NAME) $(@)
 
 clean:
+	make clean -C $(PRINTF_DIR)
 	rm -f $(OBJ)
 
 fclean: clean
+	make fclean -C $(PRINTF_DIR)
 	rm -f $(NAME)
 
 re: fclean all

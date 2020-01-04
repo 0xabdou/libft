@@ -9,7 +9,7 @@ The library also includes a set of functions that are either not included in the
 
 
 
-You can check the project's subject [here](https://github.com/zettai-dev/cub3D/blob/master/readme_srcs/en.subject.pdf)
+You can check the project's subject [here](https://github.com/zettai-dev/libft/blob/master/readme_srcs/en.subject.pdf)
 <p align="center">
-  <img src="https://github.com/zettai-dev/cub3D/blob/master/readme_srcs/git_logo.jpg" alt="42_1337" height="200">
+  <img src="https://raw.githubusercontent.com/zettai-dev/libft/master/readme_srcs/git_logo.jpg" alt="42_1337" height="200">
 </p>
